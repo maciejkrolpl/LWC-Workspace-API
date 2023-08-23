@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Contact Records" icon-name="standard:contact">
+        <template if:true={contacts.data}>
+            <template for:each={contacts.data} for:item="contact">
+                <div key={contact.Id} class="slds-m-top_small">
+                    <span class="slds-p-right_small">{contact.Name}</span>
+                    <lightning-button-group>
+                        <lightning-button label="Open in new tab" data-id={contact.Id} onclick={handleTabOpen}>
+                        </lightning-button>
+                        <lightning-button label="Open in subtab" data-id={contact.Id} onclick={handleSubtabOpen}>
+                        </lightning-button>
+                    </lightning-button-group>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+</template>
